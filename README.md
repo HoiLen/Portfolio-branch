@@ -6,5 +6,5 @@
 
 ### （更新）手順
 1. `npm run build` でビルドする
-2. mainブランチにプッシュする
+2. masterブランチにプッシュする
 3. `git subtree push --prefix build/ origin gh-pages` でサブブランチのgh-pagesにbuildファイルをpushする

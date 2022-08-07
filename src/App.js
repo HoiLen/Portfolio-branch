@@ -1,19 +1,11 @@
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom"
-import { Home, Login, Register, NotFound } from './components/index'
+import { Home, Login, Register, NotFound, Header } from './components/index'
 
 function App() {
   return (
     <>
-      <h1>HoiLen</h1>
-
-      <nav>
-			  <ul>
-				  <li><Link to="/">Home</Link></li>
-				  <li><Link to="/register">Register</Link></li>
-				  <li><Link to="/login/">--Login--</Link></li>
-			  </ul>
-		  </nav>
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />

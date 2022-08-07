@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const NotFound = () => {
   return (
 	<div>
-		<h1>NotFound 404</h1>
+		<h2>NotFound 404</h2>
 		<Link to={`/`}>ホームに戻る</Link>
 	</div>
   )

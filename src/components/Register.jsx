@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Register = () => {
   return (
 	<>
-		<h1>新規登録ページ</h1>
+		<h2>新規登録ページ</h2>
 		<div>
 			ログインは<Link to={`/login/`}>こちら</Link>
 		</div>

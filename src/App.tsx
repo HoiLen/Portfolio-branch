@@ -8,13 +8,13 @@ function App() {
     <>
       <Header />
 
-      <Gallery />
+      {/* <Gallery /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register/" element={<Register />} />
         <Route path="/login/" element={<Login />} />
-        <Route path="/img/0/" element={<Modalc />} />
+        <Route path="/img/:id/" element={<Gallery />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

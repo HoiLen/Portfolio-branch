@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { IMAGES } from '../images'
 
 const Modalc = () => {
@@ -10,6 +10,8 @@ const Modalc = () => {
 	const [open, setOpen] = useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
+
+	let { id } = useParams();
 
 	return (
 		<div>
@@ -28,7 +30,6 @@ const Modalc = () => {
 					left: '50%',
 					transform: 'translate(-50%, -50%)',
 					width: 400,
-					// bgcolor: 'background.paper',
 					backgroundColor: 'black',
 					color: '#fff',
 					border: '2px solid #000',
@@ -38,6 +39,11 @@ const Modalc = () => {
 					<h1>
 						モーダルだよ
 					</h1>
+					<p>
+						{id}
+					</p>
+
+					
 				</Box>
 
 			</Modal>

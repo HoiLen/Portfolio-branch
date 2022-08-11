@@ -1,17 +1,17 @@
 let IMAGES = [
 	{
 		id:0,
-		title: "random0",
+		title: "const0",
 		src: "https://picsum.photos/id/0/400/400"
 	},
 	{
 		id:1,
-		title: "random1",
+		title: "const1",
 		src: "https://picsum.photos/id/1002/400/400"
 	},
 	{
 		id:2,
-		title: "random2",
+		title: "const2",
 		src: "https://picsum.photos/id/1000/400/400"
 	},
 	{

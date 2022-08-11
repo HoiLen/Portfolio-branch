@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { IMAGES } from '../images'
+import { getImageById, IMAGES } from '../images'
 import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
+import Dialog from '@mui/material/Dialog';
 import Box from '@mui/material/Box';
 
 const Gallery = () => {
@@ -11,16 +11,21 @@ const Gallery = () => {
 	const handleClose = () => setOpen(false);
 
 	let { id } = useParams();
+	let image = getImageById(Number(id));
 
-	return (
+	if (!image) return null;
+
+	else return (
 		<div>
 			<h2>Gallery</h2>
-			<div style={{
-				margin: "auto 0",
-				display: "flex",
-				justifyContent: "center",
-				gap: "24px",
-			}}>
+			<div
+				style={{
+					margin: "auto 0",
+					display: "flex",
+					justifyContent: "center",
+					gap: "24px",
+				}}
+			>
 				{IMAGES.map((image) => (
 					<Link
 						key={image.id}
@@ -28,53 +33,57 @@ const Gallery = () => {
 					>
 						<Button onClick={handleOpen}>
 							<img
+								style={{
+									borderRadius: "8px",
+								}}
 								width={200}
 								height={200}
 								src={image.src}
 								alt={image.title}
-								style={{
-									borderRadius: "8px",
-								}}
 							/>
 						</Button>
 
 					</Link>
 				))}
-				<Modal
+				<Dialog
 					open={open}
 					onClose={handleClose}
-
+					aria-labelledby="alert-dialog-title"
+					aria-describedby="alert-dialog-description"
 				>
 					<Box style={{
-						position: 'absolute',
-						top: '50%',
-						left: '50%',
-						transform: 'translate(-50%, -50%)',
-						width: 400,
-						backgroundColor: '#000',
+						padding: '40px',
+						display: "flex",
+						flexDirection: 'column',
+						backgroundColor: '#fff',
 						color: '#fff',
-						border: '2px solid #000',
+						// border: '2px solid #000',
 						boxShadow: 24,
 						p: 4,
 					}}>
+						{/* <p>{image.title}</p> */}
 						<img
-							// width={400}
-							// height={400}
-							src={IMAGES[id].src}
-							alt={IMAGES[id].title}
+							width={400}
+							height={400}
+							src={image.src}
+							alt={image.title}
 							style={{
-								margin: "16px 0",
 								borderRadius: "8px",
-								width: "100%",
-								height: "auto",
 							}}
 						/>
-						<p>
-							{id}
-						</p>
+						{/* <Button
+							onClick={handleClose}
+							variant='outlined'
+							color='primary'
+							style = {{
+								margin: '8px 50px',
+							}}
+							>
+								Close
+							</Button> */}
 					</Box>
 
-				</Modal>
+				</Dialog>
 
 
 			</div>

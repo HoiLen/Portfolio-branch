@@ -56,12 +56,12 @@ const Gallery = () => {
 						display: "flex",
 						flexDirection: 'column',
 						backgroundColor: '#fff',
-						color: '#fff',
+						color: '#000',
 						// border: '2px solid #000',
 						boxShadow: 24,
 						p: 4,
 					}}>
-						{/* <p>{image.title}</p> */}
+						<p>{image.title}</p>
 						<img
 							width={400}
 							height={400}
@@ -71,7 +71,7 @@ const Gallery = () => {
 								borderRadius: "8px",
 							}}
 						/>
-						{/* <Button
+						<Button
 							onClick={handleClose}
 							variant='outlined'
 							color='primary'
@@ -80,7 +80,7 @@ const Gallery = () => {
 							}}
 							>
 								Close
-							</Button> */}
+							</Button>
 					</Box>
 
 				</Dialog>
